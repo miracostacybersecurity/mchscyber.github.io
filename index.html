@@ -71,50 +71,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            position: relative;
-        }
-        
-        /* Glitch effect for hero title */
-        .hero-title.glitch::before,
-        .hero-title.glitch::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--accent-blue), #7ee787);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            overflow: hidden;
-            clip: rect(0, 900px, 0, 0);
-        }
-        
-        .hero-title.glitch::before {
-            left: 2px;
-            text-shadow: -2px 0 #ff7b72;
-            animation: glitch 4s infinite linear;
-        }
-        
-        .hero-title.glitch::after {
-            left: -2px;
-            text-shadow: -2px 0 #7ee787;
-            animation: glitch 4s infinite linear reverse;
-        }
-        
-        @keyframes glitch {
-            0% { clip: rect(33px, 9999px, 60px, 0); transform: skew(0.2deg); }
-            10% { clip: rect(85px, 9999px, 10px, 0); transform: skew(0.8deg); }
-            20% { clip: rect(73px, 9999px, 40px, 0); transform: skew(0.3deg); }
-            30% { clip: rect(43px, 9999px, 80px, 0); transform: skew(0.7deg); }
-            40% { clip: rect(13px, 9999px, 50px, 0); transform: skew(0.4deg); }
-            50% { clip: rect(63px, 9999px, 20px, 0); transform: skew(0.1deg); }
-            60% { clip: rect(33px, 9999px, 70px, 0); transform: skew(0.5deg); }
-            70% { clip: rect(53px, 9999px, 10px, 0); transform: skew(0.2deg); }
-            80% { clip: rect(23px, 9999px, 60px, 0); transform: skew(0.6deg); }
-            90% { clip: rect(43px, 9999px, 30px, 0); transform: skew(0.3deg); }
-            100% { clip: rect(13px, 9999px, 40px, 0); transform: skew(0.4deg); }
         }
         
         .hero-subtitle {
@@ -177,7 +133,6 @@
             background-color: var(--secondary-dark);
             border-top: 1px solid #30363d;
             padding: 2rem 0;
-            text-align: center;
             color: var(--text-muted);
         }
         
@@ -368,13 +323,13 @@
                             <a class="nav-link" href="#about">Join</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#about">Updates</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="#about">Gallery</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#calendar">Calendar</a>
+                            <a class="nav-link" href="#about">Updates</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#competitions">Competitions</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#about">Contact</a>
@@ -390,7 +345,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <h1 class="hero-title glitch" data-text="Mira Costa Cybersecurity Club">Mira Costa Cybersecurity Club</h1>
+                    <h1 class="hero-title">Mira Costa Cybersecurity Club</h1>
                     <p class="hero-subtitle">
                         We're renovating our website. Stay tuned for updates!
                     </p>
@@ -502,7 +457,7 @@
     </section>
 
     <!-- Our Competitions Section -->
-    <section class="competitions-section bg-dark">
+    <section id="competitions" class="competitions-section bg-dark">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center mb-5">
@@ -668,8 +623,14 @@
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2025 Mira Costa Cybersecurity Club. All rights reserved.</p>
-            <p>Made with ❤️ by the MCHS Cyber Security Club using Bootstrap</p>
+            <div class="row align-items-center">
+                <div class="col-md-6 text-start">
+                    <p class="mb-0">&copy; 2025 Mira Costa Cybersecurity Club. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p class="mb-0">Made with ❤️ by the MCHS Cyber Security Club using Bootstrap</p>
+                </div>
+            </div>
         </div>
     </footer>
 
