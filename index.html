@@ -94,13 +94,13 @@
         .hero-title.glitch::before {
             left: 2px;
             text-shadow: -2px 0 #ff7b72;
-            animation: glitch 2.5s infinite linear;
+            animation: glitch 4s infinite linear;
         }
         
         .hero-title.glitch::after {
             left: -2px;
             text-shadow: -2px 0 #7ee787;
-            animation: glitch 2.5s infinite linear reverse;
+            animation: glitch 4s infinite linear reverse;
         }
         
         @keyframes glitch {
@@ -181,6 +181,41 @@
             color: var(--text-muted);
         }
         
+        /* Statistics Section */
+        .stats-section {
+            background-color: var(--secondary-dark);
+            padding: 5rem 0;
+            border-top: 1px solid #30363d;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        
+        .stat-icon {
+            font-size: 3rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--accent-blue), #7ee787);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .hero-title {
@@ -230,7 +265,7 @@
                             <a class="nav-link" href="#about">Updates</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#gallery">Gallery</a>
+                            <a class="nav-link" href="#about">Gallery</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#calendar">Calendar</a>
@@ -307,7 +342,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="card h-100">
                         <div class="card-header">
-                            <h4><i class="fas fa-camera me-2"></i>Club Photos</h4>
+                            <h4><i class="fas fa-camera me-2"></i>Gallery</h4>
                         </div>
                         <div class="card-body text-center">
                             <div class="media-placeholder mb-3" style="background-color: #30363d; border: 2px dashed #58a6ff; border-radius: 8px; height: 200px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
@@ -360,6 +395,56 @@
         </div>
     </section>
 
+    <!-- Statistics Section -->
+    <section class="stats-section bg-dark">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-12 mb-5">
+                    <h2 class="section-title">Our Impact</h2>
+                    <p class="lead text-muted">Building cybersecurity awareness one student at a time</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-number" data-target="50">0</div>
+                        <div class="stat-label">Active Members</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="stat-number" data-target="12">0</div>
+                        <div class="stat-label">Competitions Entered</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="stat-number" data-target="100">0</div>
+                        <div class="stat-label">Skills Learned</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="stat-number" data-target="25">0</div>
+                        <div class="stat-label">Events Hosted</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
@@ -380,6 +465,45 @@
                     behavior: 'smooth'
                 });
             });
+        });
+        
+        // Statistics counter animation
+        function animateStats() {
+            const stats = document.querySelectorAll('.stat-number');
+            
+            stats.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-target'));
+                const increment = target / 100;
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    stat.textContent = Math.ceil(current);
+                    
+                    if (current >= target) {
+                        stat.textContent = target;
+                        clearInterval(timer);
+                    }
+                }, 20);
+            });
+        }
+        
+        // Trigger stats animation when section comes into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+        
+        // Observe the stats section when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            const statsSection = document.querySelector('.stats-section');
+            if (statsSection) {
+                observer.observe(statsSection);
+            }
         });
     </script>
 </body>
