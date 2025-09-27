@@ -71,6 +71,50 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            position: relative;
+        }
+        
+        /* Glitch effect for hero title */
+        .hero-title.glitch::before,
+        .hero-title.glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent-blue), #7ee787);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            overflow: hidden;
+            clip: rect(0, 900px, 0, 0);
+        }
+        
+        .hero-title.glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 #ff7b72;
+            animation: glitch 2.5s infinite linear;
+        }
+        
+        .hero-title.glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 #7ee787;
+            animation: glitch 2.5s infinite linear reverse;
+        }
+        
+        @keyframes glitch {
+            0% { clip: rect(33px, 9999px, 60px, 0); transform: skew(0.2deg); }
+            10% { clip: rect(85px, 9999px, 10px, 0); transform: skew(0.8deg); }
+            20% { clip: rect(73px, 9999px, 40px, 0); transform: skew(0.3deg); }
+            30% { clip: rect(43px, 9999px, 80px, 0); transform: skew(0.7deg); }
+            40% { clip: rect(13px, 9999px, 50px, 0); transform: skew(0.4deg); }
+            50% { clip: rect(63px, 9999px, 20px, 0); transform: skew(0.1deg); }
+            60% { clip: rect(33px, 9999px, 70px, 0); transform: skew(0.5deg); }
+            70% { clip: rect(53px, 9999px, 10px, 0); transform: skew(0.2deg); }
+            80% { clip: rect(23px, 9999px, 60px, 0); transform: skew(0.6deg); }
+            90% { clip: rect(43px, 9999px, 30px, 0); transform: skew(0.3deg); }
+            100% { clip: rect(13px, 9999px, 40px, 0); transform: skew(0.4deg); }
         }
         
         .hero-subtitle {
@@ -180,10 +224,10 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#join">Join</a>
+                            <a class="nav-link" href="#about">Join</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#updates">Updates</a>
+                            <a class="nav-link" href="#about">Updates</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#gallery">Gallery</a>
@@ -192,7 +236,7 @@
                             <a class="nav-link" href="#calendar">Calendar</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact</a>
+                            <a class="nav-link" href="#about">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -205,7 +249,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <h1 class="hero-title">Mira Costa Cybersecurity Club</h1>
+                    <h1 class="hero-title glitch" data-text="Mira Costa Cybersecurity Club">Mira Costa Cybersecurity Club</h1>
                     <p class="hero-subtitle">
                         We're renovating our website. Stay tuned for updates!
                     </p>
@@ -228,13 +272,13 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- Cards Section -->
     <section id="about" class="content-section">
         <div class="container">
-            <h2 class="section-title">About Our Club</h2>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="card">
+            <div class="row g-4">
+                <!-- About Card -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100">
                         <div class="card-header">
                             <h4><i class="fas fa-users me-2"></i>Who We Are</h4>
                         </div>
@@ -243,19 +287,12 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Join Section -->
-    <section id="join" class="content-section bg-dark">
-        <div class="container">
-            <h2 class="section-title">Join Our Club</h2>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="card">
+                
+                <!-- Join Card -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100">
                         <div class="card-header">
-                            <h4><i class="fas fa-calendar me-2"></i>Meeting Information</h4>
+                            <h4><i class="fas fa-calendar me-2"></i>Join Our Club</h4>
                         </div>
                         <div class="card-body">
                             <p><strong>When:</strong> Wednesdays at lunch</p>
@@ -265,19 +302,29 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Updates Section -->
-    <section id="updates" class="content-section">
-        <div class="container">
-            <h2 class="section-title">Recent Updates</h2>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="card">
+                
+                <!-- Media Card -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100">
                         <div class="card-header">
-                            <h4><i class="fas fa-bullhorn me-2"></i>Latest News</h4>
+                            <h4><i class="fas fa-camera me-2"></i>Club Photos</h4>
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="media-placeholder mb-3" style="background-color: #30363d; border: 2px dashed #58a6ff; border-radius: 8px; height: 200px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                                <i class="fas fa-image" style="font-size: 3rem; color: #58a6ff; margin-bottom: 1rem;"></i>
+                                <p class="text-muted mb-0">Club Photo Coming Soon!</p>
+                                <small class="text-muted">Photos from our activities and events</small>
+                            </div>
+                            <p>Check back soon for photos from our club meetings, competitions, and cybersecurity events!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Updates Card -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            <h4><i class="fas fa-bullhorn me-2"></i>Recent Updates</h4>
                         </div>
                         <div class="card-body">
                             <p>Welcome to our newly renovated website! We're excited to share updates about our club activities, upcoming competitions, and cybersecurity learning opportunities.</p>
@@ -285,17 +332,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="content-section bg-dark">
-        <div class="container">
-            <h2 class="section-title">Contact Us</h2>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="card">
+                
+                <!-- Contact Card -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="card h-100">
                         <div class="card-header">
                             <h4><i class="fas fa-envelope me-2"></i>Get In Touch</h4>
                         </div>
