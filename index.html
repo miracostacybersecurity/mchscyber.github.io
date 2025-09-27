@@ -181,39 +181,46 @@
             color: var(--text-muted);
         }
         
-        /* Statistics Section */
-        .stats-section {
+        /* Logo Showcase Section */
+        .logo-showcase-section {
             background-color: var(--secondary-dark);
             padding: 5rem 0;
             border-top: 1px solid #30363d;
         }
         
-        .stat-item {
-            text-align: center;
-            padding: 2rem 1rem;
+        .logo-showcase-card {
+            background-color: var(--primary-dark);
+            border: 1px solid #30363d;
+            border-radius: 1rem;
+            padding: 3rem 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
         
-        .stat-icon {
-            font-size: 3rem;
-            color: var(--accent-blue);
-            margin-bottom: 1rem;
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
+        .showcase-logo {
+            max-width: 200px;
+            height: auto;
+            filter: drop-shadow(0 4px 12px rgba(88, 166, 255, 0.3));
+        }
+        
+        .logo-title {
             color: var(--text-light);
-            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 1.8rem;
             background: linear-gradient(135deg, var(--accent-blue), #7ee787);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
         
-        .stat-label {
+        .logo-description {
             font-size: 1.1rem;
-            color: var(--text-muted);
-            font-weight: 500;
+            line-height: 1.6;
         }
         
         /* Responsive adjustments */
@@ -395,50 +402,21 @@
         </div>
     </section>
 
-    <!-- Statistics Section -->
-    <section class="stats-section bg-dark">
+    <!-- Logo Showcase Section -->
+    <section class="logo-showcase-section bg-dark">
         <div class="container">
-            <div class="row text-center">
-                <div class="col-lg-12 mb-5">
-                    <h2 class="section-title">Our Impact</h2>
-                    <p class="lead text-muted">Building cybersecurity awareness one student at a time</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="stat-item">
-                        <div class="stat-icon">
-                            <i class="fas fa-users"></i>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="logo-showcase-card">
+                        <div class="logo-container mb-4">
+                            <img src="https://github.com/user-attachments/assets/e382f649-7be1-4b98-9159-52296430b870" 
+                                 alt="Mira Costa Cybersecurity Club Logo" 
+                                 class="showcase-logo img-fluid">
                         </div>
-                        <div class="stat-number" data-target="50">0</div>
-                        <div class="stat-label">Active Members</div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="stat-item">
-                        <div class="stat-icon">
-                            <i class="fas fa-trophy"></i>
-                        </div>
-                        <div class="stat-number" data-target="12">0</div>
-                        <div class="stat-label">Competitions Entered</div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="stat-item">
-                        <div class="stat-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <div class="stat-number" data-target="100">0</div>
-                        <div class="stat-label">Skills Learned</div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="stat-item">
-                        <div class="stat-icon">
-                            <i class="fas fa-calendar-check"></i>
-                        </div>
-                        <div class="stat-number" data-target="25">0</div>
-                        <div class="stat-label">Events Hosted</div>
+                        <h3 class="logo-title mb-3">Mira Costa Cybersecurity Club</h3>
+                        <p class="logo-description text-muted">
+                            Representing excellence in cybersecurity education and digital defense
+                        </p>
                     </div>
                 </div>
             </div>
@@ -465,45 +443,6 @@
                     behavior: 'smooth'
                 });
             });
-        });
-        
-        // Statistics counter animation
-        function animateStats() {
-            const stats = document.querySelectorAll('.stat-number');
-            
-            stats.forEach(stat => {
-                const target = parseInt(stat.getAttribute('data-target'));
-                const increment = target / 100;
-                let current = 0;
-                
-                const timer = setInterval(() => {
-                    current += increment;
-                    stat.textContent = Math.ceil(current);
-                    
-                    if (current >= target) {
-                        stat.textContent = target;
-                        clearInterval(timer);
-                    }
-                }, 20);
-            });
-        }
-        
-        // Trigger stats animation when section comes into view
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateStats();
-                    observer.unobserve(entry.target);
-                }
-            });
-        });
-        
-        // Observe the stats section when DOM is loaded
-        document.addEventListener('DOMContentLoaded', () => {
-            const statsSection = document.querySelector('.stats-section');
-            if (statsSection) {
-                observer.observe(statsSection);
-            }
         });
     </script>
 </body>
