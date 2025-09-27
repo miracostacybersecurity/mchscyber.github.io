@@ -1,0 +1,277 @@
+:root {
+    --primary-dark: #0d1117;
+    --secondary-dark: #161b22;
+    --accent-blue: #58a6ff;
+    --text-light: #c9d1d9;
+    --text-muted: #8b949e;
+}
+
+body {
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+/* Header Styles */
+.site-header {
+    background-color: var(--secondary-dark);
+    border-bottom: 1px solid #30363d;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent-blue) !important;
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-light) !important;
+    font-weight: 500;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--accent-blue) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(13, 17, 23, 0.7), rgba(13, 17, 23, 0.7)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23161b22" width="1200" height="600"/><g fill="%23238636" opacity="0.1"><circle cx="200" cy="100" r="2"/><circle cx="400" cy="200" r="1.5"/><circle cx="600" cy="150" r="2"/><circle cx="800" cy="300" r="1"/><circle cx="1000" cy="250" r="1.5"/><circle cx="300" cy="400" r="1"/><circle cx="700" cy="450" r="2"/><circle cx="900" cy="500" r="1.5"/></g></svg>');
+    background-size: cover;
+    background-position: center;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--accent-blue), #7ee787);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+/* Content sections */
+.content-section {
+    padding: 4rem 0;
+}
+
+.section-title {
+    color: var(--accent-blue);
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.card {
+    background-color: var(--secondary-dark);
+    border: 1px solid #30363d;
+    color: var(--text-light);
+}
+
+.card-header {
+    background-color: rgba(88, 166, 255, 0.1);
+    border-bottom: 1px solid var(--accent-blue);
+}
+
+/* Social Media Links */
+.social-links {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.social-link {
+    display: inline-block;
+    margin: 0 1rem;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--secondary-dark);
+    color: var(--text-light);
+    text-decoration: none;
+    border-radius: 0.5rem;
+    border: 1px solid #30363d;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: var(--accent-blue);
+    color: white;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+.site-footer {
+    background-color: var(--secondary-dark);
+    border-top: 1px solid #30363d;
+    padding: 2rem 0;
+    color: var(--text-muted);
+}
+
+/* Competitions Section */
+.competitions-section {
+    background-color: var(--secondary-dark);
+    padding: 5rem 0;
+    border-top: 1px solid #30363d;
+}
+
+.competition-card {
+    background-color: var(--primary-dark);
+    border: 1px solid #30363d;
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.competition-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(88, 166, 255, 0.2);
+}
+
+.competition-logo-img {
+    max-width: 120px;
+    height: auto;
+    filter: brightness(1.1);
+}
+
+.logo-placeholder {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.competition-title {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.competition-season {
+    color: var(--accent-blue);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.competition-description {
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* Statistics Styles */
+.stats-card,
+.competition-details-card {
+    background-color: var(--primary-dark);
+    border: 1px solid #30363d;
+    border-radius: 1rem;
+    padding: 2rem;
+    height: 100%;
+}
+
+.stats-title,
+.details-title {
+    color: var(--accent-blue);
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.stat-box {
+    text-align: center;
+    padding: 1rem;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent-blue), #7ee787);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-label {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+.stats-note {
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+.achievement-year,
+.achievement-tier {
+    font-weight: 500;
+    color: var(--text-light);
+}
+
+.achievement-progress {
+    height: 8px;
+    background-color: #30363d;
+}
+
+.achievement-progress .progress-bar {
+    background: linear-gradient(135deg, var(--accent-blue), #7ee787);
+}
+
+/* Accordion Styles */
+.accordion-item {
+    background-color: var(--secondary-dark);
+    border: 1px solid #30363d;
+    margin-bottom: 0.5rem;
+}
+
+.accordion-button {
+    background-color: var(--secondary-dark);
+    color: var(--text-light);
+    border: none;
+    font-weight: 500;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--accent-blue);
+    color: white;
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.2rem rgba(88, 166, 255, 0.25);
+}
+
+.accordion-body {
+    background-color: var(--primary-dark);
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
