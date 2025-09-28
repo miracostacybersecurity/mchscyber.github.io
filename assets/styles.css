@@ -41,14 +41,14 @@ body {
                 url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23161b22" width="1200" height="600"/><g fill="%23238636" opacity="0.1"><circle cx="200" cy="100" r="2"/><circle cx="400" cy="200" r="1.5"/><circle cx="600" cy="150" r="2"/><circle cx="800" cy="300" r="1"/><circle cx="1000" cy="250" r="1.5"/><circle cx="300" cy="400" r="1"/><circle cx="700" cy="450" r="2"/><circle cx="900" cy="500" r="1.5"/></g></svg>');
     background-size: cover;
     background-position: center;
-    min-height: 60vh;
+    min-height: 35vh;
     display: flex;
     align-items: center;
     text-align: center;
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 2.75rem;
     font-weight: 700;
     margin-bottom: 1rem;
     background: linear-gradient(135deg, var(--accent-blue), #7ee787);
@@ -58,9 +58,9 @@ body {
 }
 
 .hero-subtitle {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: var(--text-muted);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 /* Content sections */
