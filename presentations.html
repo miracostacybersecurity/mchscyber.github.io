@@ -213,7 +213,10 @@
             const title = presentation.title || filename.replace('.pptx', '');
             const date = presentation.date ? new Date(presentation.date).toLocaleDateString() : '';
             const downloadUrl = presentation.url || `presentations/${filename}`;
-            const encodedUrl = encodeURIComponent(downloadUrl);
+            
+            // For Office Web Apps Viewer, we need the full URL
+            const fullUrl = `${window.location.origin}/${downloadUrl}`;
+            const encodedUrl = encodeURIComponent(fullUrl);
 
             return `
                 <div class="col-lg-4 col-md-6">
