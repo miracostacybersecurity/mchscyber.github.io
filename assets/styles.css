@@ -87,6 +87,21 @@ body {
     border-bottom: 1px solid var(--accent-blue);
 }
 
+/* Activity List */
+.activity-list {
+    list-style: none;
+    padding: 0;
+}
+
+.activity-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #30363d;
+}
+
+.activity-list li:last-child {
+    border-bottom: none;
+}
+
 /* Social Media Links */
 .social-links {
     text-align: center;
@@ -261,6 +276,148 @@ body {
     line-height: 1.6;
 }
 
+/* Gallery Placeholder */
+.placeholder-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background-color: var(--secondary-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #30363d;
+    border-radius: 0.5rem;
+}
+
+.placeholder-image i {
+    font-size: 4rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.placeholder-image p {
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* Leadership Card */
+.leadership-card {
+    background-color: var(--secondary-dark);
+    border: 1px solid #30363d;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.leadership-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(88, 166, 255, 0.15);
+}
+
+.leadership-card h5 {
+    color: var(--accent-blue);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Achievement Cards */
+.achievement-card {
+    background-color: var(--secondary-dark);
+    border: 1px solid #30363d;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.achievement-year-header {
+    background-color: var(--primary-dark);
+    padding: 1.5rem;
+    border-bottom: 2px solid var(--accent-blue);
+}
+
+.achievement-year-header h3 {
+    color: var(--text-light);
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.achievement-body {
+    padding: 1.5rem;
+}
+
+.achievement-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    background-color: var(--primary-dark);
+    border-radius: 0.5rem;
+    border: 1px solid #30363d;
+}
+
+.achievement-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    margin-right: 1rem;
+    min-width: 120px;
+    text-align: center;
+}
+
+.achievement-badge.platinum {
+    background-color: rgba(186, 186, 225, 0.2);
+    color: #babad1;
+    border: 1px solid #babad1;
+}
+
+.achievement-badge.gold {
+    background-color: rgba(255, 215, 0, 0.2);
+    color: #ffd700;
+    border: 1px solid #ffd700;
+}
+
+.achievement-badge.silver {
+    background-color: rgba(192, 192, 192, 0.2);
+    color: #c0c0c0;
+    border: 1px solid #c0c0c0;
+}
+
+.achievement-text {
+    color: var(--text-light);
+    flex: 1;
+}
+
+.achievement-icon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+/* Carousel Styles */
+#galleryCarousel {
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 1px solid #30363d;
+}
+
+#galleryCarousel .carousel-inner {
+    background-color: var(--secondary-dark);
+}
+
+#galleryCarousel .carousel-item {
+    min-height: 400px;
+}
+
+#galleryCarousel img {
+    object-fit: contain;
+    max-height: 600px;
+}
+
+/* Active Navigation Link */
+.nav-link.active {
+    color: var(--accent-blue) !important;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .hero-title {
@@ -273,5 +430,15 @@ body {
     
     .section-title {
         font-size: 2rem;
+    }
+    
+    .achievement-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .achievement-badge {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
     }
 }
