@@ -25,7 +25,7 @@
     <header class="site-header">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
-                <a class="navbar-brand" href="#home">
+                <a class="navbar-brand" href="index.html">
                     <img src="assets/favicon.ico" alt="Club Logo" style="height: 30px; width: auto; margin-right: 8px;">
                     Mira Costa Cybersecurity Club
                 </a>
@@ -36,29 +36,20 @@
                 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown">
-                                About
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-dark">
-                                <li><a class="dropdown-item" href="#about">About Us</a></li>
-                                <li><a class="dropdown-item" href="#leadership">Leadership</a></li>
-                            </ul>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#about">Join</a>
+                            <a class="nav-link" href="join.html">Join</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#about">Gallery</a>
+                            <a class="nav-link" href="gallery.html">Gallery</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#about">Updates</a>
+                            <a class="nav-link" href="competitions.html">Competitions</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#competitions">Competitions</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about">Contact</a>
+                            <a class="nav-link" href="contact.html">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -73,30 +64,14 @@
                 <div class="col-lg-8 mx-auto">
                     <h1 class="hero-title">Mira Costa Cybersecurity Club</h1>
                     <p class="hero-subtitle">
-                        We're renovating our website. Stay tuned for updates!
+                        Educating and promoting cybersecurity through competitions and technology
                     </p>
-                    <!--
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/mchscyber/" class="social-link" target="_blank">
-                            <i class="fab fa-instagram me-2"></i>
-                            @mchscyber
-                        </a>
-                        <a href="https://twitter.com/mchscyber" class="social-link" target="_blank">
-                            <i class="fab fa-twitter me-2"></i>
-                            @mchscyber
-                        </a>
-                        <a href="mailto:contact@costacyber.org" class="social-link">
-                            <i class="fas fa-envelope me-2"></i>
-                            Contact Us
-                        </a>
-                    </div>
-                    -->
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Cards Section -->
+    <!-- About Section -->
     <section id="about" class="content-section">
         <div class="container">
             <div class="row">
@@ -106,92 +81,46 @@
             </div>
             
             <div class="row g-4">
-                <!-- About Card -->
-                <div class="col-lg-4 col-md-6">
+                <!-- Who We Are -->
+                <div class="col-lg-6">
                     <div class="card h-100">
                         <div class="card-header">
                             <h4><i class="fas fa-users me-2"></i>Who We Are</h4>
                         </div>
                         <div class="card-body">
-                            <p>The Mira Costa Cybersecurity Club is dedicated to educating and promoting cybersecurity and technology through competitions and off-season activities. We welcome students of all skill levels who are interested in learning about information security, ethical hacking, and digital forensics.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Join Card -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100">
-                        <div class="card-header">
-                            <h4><i class="fas fa-calendar me-2"></i>Join Our Club</h4>
-                        </div>
-                        <div class="card-body">
-                            <p><strong>When:</strong> Wednesdays at lunch</p>
-                            <p><strong>Where:</strong> Room 112</p>
-                            <p><strong>What to expect:</strong> Learn about cybersecurity, participate in competitions, and connect with fellow tech enthusiasts!</p>
-                            <p>No prior experience necessary - just bring your curiosity and enthusiasm for technology and security!</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Media Card -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100">
-                        <div class="card-header">
-                            <h4><i class="fas fa-camera me-2"></i>Gallery</h4>
-                        </div>
-                        <div class="card-body text-center">
-                            <div id="galleryCarousel" class="carousel slide mb-3" data-bs-ride="carousel">
-                              <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                  <img src="assets/2023.png" class="d-block w-100" alt="Gallery 2023">
+                            <p>The Mira Costa Cybersecurity Club is dedicated to educating and promoting cybersecurity and technology through competitions and off-season activities.</p>
+                            <p>We welcome students of all skill levels who are interested in learning about information security, ethical hacking, and digital forensics.</p>
+                            <div class="row mt-4">
+                                <div class="col-6">
+                                    <div class="stat-box">
+                                        <div class="stat-number">49</div>
+                                        <div class="stat-label">Total Members</div>
+                                    </div>
                                 </div>
-                              </div>
-                              <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                              </button>
-                              <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                              </button>
+                                <div class="col-6">
+                                    <div class="stat-box">
+                                        <div class="stat-number">18</div>
+                                        <div class="stat-label">Competition Team</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Updates Card -->
-                <div class="col-lg-6 col-md-6">
+                <!-- What We Do -->
+                <div class="col-lg-6">
                     <div class="card h-100">
                         <div class="card-header">
-                            <h4><i class="fas fa-bullhorn me-2"></i>Recent Updates</h4>
+                            <h4><i class="fas fa-laptop-code me-2"></i>What We Do</h4>
                         </div>
                         <div class="card-body">
-                            <p>Welcome to our newly renovated website! We're excited to share updates about our club activities, upcoming competitions, and cybersecurity learning opportunities.</p>
-                            <p>Stay tuned for more announcements and follow us on social media for the latest updates!</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Contact Card -->
-                <div class="col-lg-6 col-md-6">
-                    <div class="card h-100">
-                        <div class="card-header">
-                            <h4><i class="fas fa-envelope me-2"></i>Get In Touch</h4>
-                        </div>
-                        <div class="card-body text-center">
-                            <p>Have questions? Want to get involved? Reach out to us!</p>
-                            <p>
-                                <strong>Email:</strong> 
-                                <a href="mailto:contact@costacyber.org" class="text-primary">contact@costacyber.org</a>
-                            </p>
-                            <div class="social-links mt-3">
-                                <a href="https://www.instagram.com/mchscyber/" class="social-link" target="_blank">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                                <a href="https://twitter.com/mchscyber" class="social-link" target="_blank">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                            </div>
+                            <ul class="activity-list">
+                                <li><strong>Weekly Presentations & Workshops:</strong> Learn about various cybersecurity topics through hands-on activities and expert presentations</li>
+                                <li><strong>Competitions:</strong> Compete in national events like CyberPatriot, National Cyber League, and various CTF challenges</li>
+                                <li><strong>Industry Events:</strong> Attend cybersecurity conferences and events such as DEFCON and Cyberstrike by INL</li>
+                                <li><strong>Community:</strong> Connect with fellow students passionate about technology and security</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -199,163 +128,89 @@
         </div>
     </section>
 
-    <!-- Our Competitions Section -->
-    <section id="competitions" class="competitions-section bg-dark">
+    <!-- Leadership Section -->
+    <section id="leadership" class="content-section" style="background-color: var(--secondary-dark); padding: 4rem 0;">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center mb-5">
-                    <h2 class="section-title">What We Do</h2>
+                    <h2 class="section-title">Leadership Team</h2>
                 </div>
             </div>
             
-            <!-- Competition Cards Row -->
-            <div class="row g-4 mb-5">
-                <!-- CyberPatriot -->
+            <div class="row g-4 justify-content-center">
                 <div class="col-lg-4 col-md-6">
-                    <div class="competition-card h-100">
-                        <div class="competition-logo text-center mb-4">
-                            <img src="assets/cp.png" 
-                                 alt="CyberPatriot Logo" class="img-fluid competition-logo-img">
-                        </div>
-                        <div class="competition-content text-center">
-                            <h3 class="competition-title">CyberPatriot</h3>
-                            <h4 class="competition-season">Mandatory, Fall</h4>
-                            <p class="competition-description">
-                                This event, created by the Air Force Association, is the foundation of our club. Teams compete for the top placement within their state and region, and the top teams in the nation earn all-expenses-paid trips to Baltimore, MD for the National Finals Competition. Learn more at <a href=https://www.uscyberpatriot.org/>uscyberpatriot.org</a>
-                            </p>
-                        </div>
+                    <div class="leadership-card">
+                        <h5>Zoe Flam</h5>
+                        <p class="text-muted">President</p>
                     </div>
                 </div>
-                
-                <!-- National Cyber League -->
                 <div class="col-lg-4 col-md-6">
-                    <div class="competition-card h-100">
-                        <div class="competition-logo text-center mb-4">
-                            <img src="assets/NCL-logo.png" 
-                                 alt="National Cyber League Logo" class="img-fluid competition-logo-img">
-                        </div>
-                        <div class="competition-content text-center">
-                            <h3 class="competition-title">National Cyber League</h3>
-                            <h4 class="competition-season">Optional, Fall and Spring</h4>
-                            <p class="competition-description">
-                                The National Cyber League (NCL) is a virtual training ground for high school and college students to develop, practice and validate cybersecurity skills using next-generation simulation technology.
-                            </p>
-                        </div>
+                    <div class="leadership-card">
+                        <h5>Dennis Freyman</h5>
+                        <p class="text-muted">President</p>
                     </div>
                 </div>
-                
-                <!-- AFA CyberCamps -->
                 <div class="col-lg-4 col-md-6">
-                    <div class="competition-card h-100">
-                        <div class="competition-logo text-center mb-4">
-                            <div class="logo-placeholder">
-                                <i class="fas fa-shield-alt" style="font-size: 4rem; color: var(--accent-blue);"></i>
-                            </div>
-                        </div>
-                        <div class="competition-content text-center">
-                            <h3 class="competition-title">AFA CyberCamps</h3>
-                            <h4 class="competition-season">Optional, Summer</h4>
-                            <p class="competition-description">
-                                Intensive summer cybersecurity camps that provide hands-on training in ethical hacking, digital forensics, and cybersecurity defense techniques for motivated students.
-                            </p>
-                        </div>
+                    <div class="leadership-card">
+                        <h5>Jason Zhang</h5>
+                        <p class="text-muted">Vice President</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="leadership-card">
+                        <h5>Avi Khurania</h5>
+                        <p class="text-muted">Secretary</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="leadership-card">
+                        <h5>Nicholas Di Nichola</h5>
+                        <p class="text-muted">Treasurer</p>
                     </div>
                 </div>
             </div>
-            
-            <!-- Statistics Section -->
+        </div>
+    </section>
+
+    <!-- Quick Links Section -->
+    <section class="content-section">
+        <div class="container">
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="stats-card">
-                        <h3 class="stats-title">The Numbers:</h3>
-                        <div class="row g-3">
-                            <div class="col-6">
-                                <div class="stat-box">
-                                    <div class="stat-number">3</div>
-                                    <div class="stat-label">teams</div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="stat-box">
-                                    <div class="stat-number">18</div>
-                                    <div class="stat-label">students</div>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="stats-note">competing in the 2025 season</p>
-                        
-                        <!-- Achievement Progress Bars -->
-                        <div class="achievements mt-4">
-                            <div class="achievement mb-3">
-                                <div class="d-flex justify-content-between align-items-center mb-1">
-                                    <span class="achievement-year">2022</span>
-                                    <span class="achievement-tier">Gold Tier</span>
-                                </div>
-                                <div class="progress achievement-progress">
-                                    <div class="progress-bar bg-warning" style="width: 60%"></div>
-                                </div>
-                            </div>
-                            <div class="achievement mb-3">
-                                <div class="d-flex justify-content-between align-items-center mb-1">
-                                    <span class="achievement-year">2023</span>
-                                    <span class="achievement-tier">Gold Tier</span>
-                                </div>
-                                <div class="progress achievement-progress">
-                                    <div class="progress-bar bg-warning" style="width: 60%"></div>
-                                </div>
-                            </div>
-                            <div class="achievement mb-3">
-                                <div class="d-flex justify-content-between align-items-center mb-1">
-                                    <span class="achievement-year">2024</span>
-                                    <span class="achievement-tier">Platinum Tier</span>
-                                </div>
-                                <div class="progress achievement-progress">
-                                    <div class="progress-bar" style="width: 90%"></div>
-                                </div>
-                            </div>
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Get Involved</h2>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-users fa-3x mb-3" style="color: var(--accent-blue);"></i>
+                            <h4>Join Us</h4>
+                            <p>Become a member of the club and start your cybersecurity journey!</p>
+                            <a href="join.html" class="btn btn-primary">Learn More</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="competition-details-card">
-                        <h3 class="details-title">How does the CyberPatriot Competition work?</h3>
-                        <div class="accordion" id="competitionAccordion">
-                            <div class="accordion-item">
-                                <h4 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#objective">
-                                        The Objective
-                                    </button>
-                                </h4>
-                                <div id="objective" class="accordion-collapse collapse" data-bs-parent="#competitionAccordion">
-                                    <div class="accordion-body">
-                                        Each team of 5-6 members is assigned an image (virtual computer) that has multiple flaws and deficiencies. The team must try to secure as many flaws to the system as they can. For each flaw secured, points are added depending on the level of difficulty.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h4 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#timing">
-                                        Timing
-                                    </button>
-                                </h4>
-                                <div id="timing" class="accordion-collapse collapse" data-bs-parent="#competitionAccordion">
-                                    <div class="accordion-body">
-                                        The competition takes place during over (non consecutive) weekends. Each team has 6 consecutive hours on one day of the weekend to secure as many flaws as possible on the virtual machines.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h4 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ranking">
-                                        Ranking
-                                    </button>
-                                </h4>
-                                <div id="ranking" class="accordion-collapse collapse" data-bs-parent="#competitionAccordion">
-                                    <div class="accordion-body">
-                                        At the end of the six hours, points are totaled up and the team is ranked based on those of the rest of the United States. Based on the team's score in the first two rounds, the team is placed into a tier – Platinum, Gold, or Silver.
-                                    </div>
-                                </div>
-                            </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-trophy fa-3x mb-3" style="color: var(--accent-blue);"></i>
+                            <h4>Competitions</h4>
+                            <p>See our achievements and learn about the competitions we participate in</p>
+                            <a href="competitions.html" class="btn btn-primary">View Competitions</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-envelope fa-3x mb-3" style="color: var(--accent-blue);"></i>
+                            <h4>Contact</h4>
+                            <p>Have questions? Reach out to our leadership team</p>
+                            <a href="contact.html" class="btn btn-primary">Contact Us</a>
                         </div>
                     </div>
                 </div>
@@ -379,17 +234,5 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    
-    <!-- Smooth scrolling for anchor links -->
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
 </body>
 </html>
