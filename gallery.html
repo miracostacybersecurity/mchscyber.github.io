@@ -46,6 +46,9 @@
                             <a class="nav-link active" href="gallery.html">Gallery</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="presentations.html">Presentations</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="competitions.html">Competitions</a>
                         </li>
                         <li class="nav-item">
@@ -158,5 +161,78 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <!-- Gallery loader script -->
+    <script>
+        // ============================================================
+        // GALLERY CONFIGURATION
+        // ============================================================
+        // To add images to the gallery:
+        // 1. Upload your images (IMG_*.jpg, IMG_*.png, etc.) to the assets/ folder
+        // 2. Add them to the galleryImages array below
+        // 3. Each image needs: src (path to image) and caption (description)
+        // ============================================================
+        
+        const galleryImages = [
+            { src: 'assets/2023.png', caption: 'Club Photo 2023' }
+            // Add your IMG* files here:
+            // { src: 'assets/IMG_001.jpg', caption: 'Club Activity 2024' },
+            // { src: 'assets/IMG_002.jpg', caption: 'Competition Day' },
+            // { src: 'assets/IMG_003.png', caption: 'Workshop Session' }
+        ];
+        
+        function initializeGallery() {
+            const carouselInner = document.querySelector('.carousel-inner');
+            const carouselIndicators = document.querySelector('.carousel-indicators');
+            
+            if (!carouselInner || !carouselIndicators) return;
+            
+            // Clear existing content
+            carouselInner.innerHTML = '';
+            carouselIndicators.innerHTML = '';
+            
+            // Add images
+            galleryImages.forEach((image, index) => {
+                // Add indicator
+                const indicator = document.createElement('button');
+                indicator.type = 'button';
+                indicator.setAttribute('data-bs-target', '#galleryCarousel');
+                indicator.setAttribute('data-bs-slide-to', index.toString());
+                indicator.setAttribute('aria-label', `Slide ${index + 1}`);
+                if (index === 0) {
+                    indicator.classList.add('active');
+                    indicator.setAttribute('aria-current', 'true');
+                }
+                carouselIndicators.appendChild(indicator);
+                
+                // Add carousel item
+                const item = document.createElement('div');
+                item.className = 'carousel-item' + (index === 0 ? ' active' : '');
+                item.innerHTML = `
+                    <img src="${image.src}" class="d-block w-100" alt="${image.caption}">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>${image.caption}</h5>
+                    </div>
+                `;
+                carouselInner.appendChild(item);
+            });
+            
+            // If no images, show a message
+            if (galleryImages.length === 0) {
+                carouselIndicators.innerHTML = '';
+                carouselInner.innerHTML = `
+                    <div class="carousel-item active">
+                        <div class="placeholder-image">
+                            <i class="fas fa-image"></i>
+                            <p>Photos coming soon!</p>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', initializeGallery);
+    </script>
 </body>
 </html>
