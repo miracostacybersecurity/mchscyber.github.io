@@ -77,14 +77,6 @@
     <!-- Presentations Section -->
     <section class="content-section">
         <div class="container">
-            <div class="row">
-                <div class="col-12 text-center mb-4">
-                    <p style="color: var(--text-light);">
-                        Browse our collection of past presentations. Click the download button to view the full presentation.
-                    </p>
-                </div>
-            </div>
-            
             <div id="presentationsList" class="row g-4">
                 <!-- Presentations will be loaded dynamically -->
             </div>
@@ -114,6 +106,29 @@
         </div>
     </footer>
 
+    <!-- Slideshow Modal -->
+    <div class="modal fade" id="slideshowModal" tabindex="-1" aria-labelledby="slideshowModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="slideshowModalLabel">Presentation Viewer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <div id="slideshowContainer" style="position: relative; width: 100%; padding-bottom: 75%; background-color: #f0f0f0;">
+                        <iframe id="slideshowFrame" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"></iframe>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a id="downloadButton" href="#" download class="btn btn-primary">
+                        <i class="fas fa-download me-2"></i>Download
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     
@@ -134,15 +149,8 @@
             const emptyState = document.getElementById('emptyState');
             
             // Add your presentations here
-            // Large files (>25MB) are hosted on GitHub releases
-            const RELEASE_URL = 'https://github.com/miracostacybersecurity/mchscyber.github.io/releases/download/presentations-v1/';
-
+            // Files are stored in the presentations/ folder
             const presentations = [
-                {
-                    filename: 'Changing-Traffic-Lights-with-Flipper-Real-or-Fake.pptx',
-                    title: 'Changing Traffic Lights with Flipper: Real or Fake?',
-                    url: RELEASE_URL + 'Changing-Traffic-Lights-with-Flipper-Real-or-Fake.pptx'
-                },
                 {
                     filename: 'Claude-Code-and-the-Future-of-AI-in-tech-and-cybersecurity.pptx',
                     title: 'Claude Code and the Future of AI in Tech and Cybersecurity'
@@ -165,16 +173,6 @@
                     date: '2025-09-10'
                 },
                 {
-                    filename: 'Google-Forms-Test-Lock-Bypass-Ranked-Methods.pptx',
-                    title: 'Google Forms Test Lock Bypass: Ranked Methods',
-                    url: RELEASE_URL + 'Google-Forms-Test-Lock-Bypass-Ranked-Methods.pptx'
-                },
-                {
-                    filename: 'Hacking-Cars.pptx',
-                    title: 'Hacking Cars',
-                    url: RELEASE_URL + 'Hacking-Cars.pptx'
-                },
-                {
                     filename: 'Hacking-CCTV-Cameras.pptx',
                     title: 'Hacking CCTV Cameras'
                 },
@@ -183,48 +181,8 @@
                     title: 'Hacking Climate Control Systems in Buildings'
                 },
                 {
-                    filename: 'Hacking-the-Vote-A-Step-by-Step-Guide-to-Manipulating-Voting-Machines.pptx',
-                    title: 'Hacking the Vote: A Step-by-Step Guide to Manipulating Voting Machines',
-                    url: RELEASE_URL + 'Hacking-the-Vote-A-Step-by-Step-Guide-to-Manipulating-Voting-Machines.pptx'
-                },
-                {
-                    filename: 'Hacking-Wifi-Using-a-Samsung-Smart-Fridge.pptx',
-                    title: 'Hacking WiFi Using a Samsung Smart Fridge',
-                    url: RELEASE_URL + 'Hacking-Wifi-Using-a-Samsung-Smart-Fridge.pptx'
-                },
-                {
                     filename: 'Hacking-with-AI-RAGs-Agents-and-Exploit-Chains.pptx',
                     title: 'Hacking with AI: RAGs, Agents, and Exploit Chains'
-                },
-                {
-                    filename: 'How-to-Hack-an-ATM-Machine-Dispensing-Cash-on-Demand.pptx',
-                    title: 'How to Hack an ATM Machine: Dispensing Cash on Demand',
-                    url: RELEASE_URL + 'How-to-Hack-an-ATM-Machine-Dispensing-Cash-on-Demand.pptx'
-                },
-                {
-                    filename: 'National-Cyber-League-NCL.pptx',
-                    title: 'National Cyber League (NCL)',
-                    url: RELEASE_URL + 'National-Cyber-League-NCL.pptx'
-                },
-                {
-                    filename: 'Path-to-College-CSCyberSec-Extracurriculars.pptx',
-                    title: 'Path to College: CS/CyberSec Extracurriculars',
-                    url: RELEASE_URL + 'Path-to-College-CSCyberSec-Extracurriculars.pptx'
-                },
-                {
-                    filename: 'The-Power-of-OSINT.pptx',
-                    title: 'The Power of OSINT',
-                    url: RELEASE_URL + 'The-Power-of-OSINT.pptx'
-                },
-                {
-                    filename: 'The-Silk-Road-Birth-of-a-Dark-Web-Empire.pptx',
-                    title: 'The Silk Road: Birth of a Dark Web Empire',
-                    url: RELEASE_URL + 'The-Silk-Road-Birth-of-a-Dark-Web-Empire.pptx'
-                },
-                {
-                    filename: 'Theyre-Watching-How-Apple-and-Social-Media-Track-You.pptx',
-                    title: "They're Watching: How Apple and Social Media Track You",
-                    url: RELEASE_URL + 'Theyre-Watching-How-Apple-and-Social-Media-Track-You.pptx'
                 },
                 {
                     filename: 'Web-Exploitation-Concepts-and-Techniques.pptx',
@@ -255,6 +213,7 @@
             const title = presentation.title || filename.replace('.pptx', '');
             const date = presentation.date ? new Date(presentation.date).toLocaleDateString() : '';
             const downloadUrl = presentation.url || `presentations/${filename}`;
+            const encodedUrl = encodeURIComponent(downloadUrl);
 
             return `
                 <div class="col-lg-4 col-md-6">
@@ -266,7 +225,10 @@
                             <h5 class="card-title text-center">${title}</h5>
                             ${date ? `<p class="text-muted text-center small">${date}</p>` : ''}
                             <div class="mt-auto text-center">
-                                <a href="${downloadUrl}" download class="btn btn-primary w-100">
+                                <button onclick="openSlideshow('${encodedUrl}', '${title.replace(/'/g, "\\'")}', '${downloadUrl}')" class="btn btn-primary w-100 mb-2">
+                                    <i class="fas fa-play me-2"></i>View Slideshow
+                                </button>
+                                <a href="${downloadUrl}" download class="btn btn-outline-primary w-100">
                                     <i class="fas fa-download me-2"></i>Download
                                 </a>
                             </div>
@@ -274,6 +236,23 @@
                     </div>
                 </div>
             `;
+        }
+        
+        // Function to open slideshow in modal
+        function openSlideshow(encodedUrl, title, downloadUrl) {
+            const modal = new bootstrap.Modal(document.getElementById('slideshowModal'));
+            const modalTitle = document.getElementById('slideshowModalLabel');
+            const iframe = document.getElementById('slideshowFrame');
+            const downloadButton = document.getElementById('downloadButton');
+            
+            // Use Office Web Apps Viewer
+            const viewerUrl = `https://view.officeapps.live.com/op/embed.aspx?src=${encodedUrl}`;
+            
+            modalTitle.textContent = title;
+            iframe.src = viewerUrl;
+            downloadButton.href = downloadUrl;
+            
+            modal.show();
         }
         
         // Load presentations when page loads
