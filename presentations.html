@@ -134,10 +134,14 @@
             const emptyState = document.getElementById('emptyState');
             
             // Add your presentations here
+            // Large files (>25MB) are hosted on GitHub releases
+            const RELEASE_URL = 'https://github.com/miracostacybersecurity/mchscyber.github.io/releases/download/presentations-v1/';
+
             const presentations = [
                 {
                     filename: 'Changing-Traffic-Lights-with-Flipper-Real-or-Fake.pptx',
-                    title: 'Changing Traffic Lights with Flipper: Real or Fake?'
+                    title: 'Changing Traffic Lights with Flipper: Real or Fake?',
+                    url: RELEASE_URL + 'Changing-Traffic-Lights-with-Flipper-Real-or-Fake.pptx'
                 },
                 {
                     filename: 'Claude-Code-and-the-Future-of-AI-in-tech-and-cybersecurity.pptx',
@@ -162,11 +166,13 @@
                 },
                 {
                     filename: 'Google-Forms-Test-Lock-Bypass-Ranked-Methods.pptx',
-                    title: 'Google Forms Test Lock Bypass: Ranked Methods'
+                    title: 'Google Forms Test Lock Bypass: Ranked Methods',
+                    url: RELEASE_URL + 'Google-Forms-Test-Lock-Bypass-Ranked-Methods.pptx'
                 },
                 {
                     filename: 'Hacking-Cars.pptx',
-                    title: 'Hacking Cars'
+                    title: 'Hacking Cars',
+                    url: RELEASE_URL + 'Hacking-Cars.pptx'
                 },
                 {
                     filename: 'Hacking-CCTV-Cameras.pptx',
@@ -178,11 +184,13 @@
                 },
                 {
                     filename: 'Hacking-the-Vote-A-Step-by-Step-Guide-to-Manipulating-Voting-Machines.pptx',
-                    title: 'Hacking the Vote: A Step-by-Step Guide to Manipulating Voting Machines'
+                    title: 'Hacking the Vote: A Step-by-Step Guide to Manipulating Voting Machines',
+                    url: RELEASE_URL + 'Hacking-the-Vote-A-Step-by-Step-Guide-to-Manipulating-Voting-Machines.pptx'
                 },
                 {
                     filename: 'Hacking-Wifi-Using-a-Samsung-Smart-Fridge.pptx',
-                    title: 'Hacking WiFi Using a Samsung Smart Fridge'
+                    title: 'Hacking WiFi Using a Samsung Smart Fridge',
+                    url: RELEASE_URL + 'Hacking-Wifi-Using-a-Samsung-Smart-Fridge.pptx'
                 },
                 {
                     filename: 'Hacking-with-AI-RAGs-Agents-and-Exploit-Chains.pptx',
@@ -190,27 +198,33 @@
                 },
                 {
                     filename: 'How-to-Hack-an-ATM-Machine-Dispensing-Cash-on-Demand.pptx',
-                    title: 'How to Hack an ATM Machine: Dispensing Cash on Demand'
+                    title: 'How to Hack an ATM Machine: Dispensing Cash on Demand',
+                    url: RELEASE_URL + 'How-to-Hack-an-ATM-Machine-Dispensing-Cash-on-Demand.pptx'
                 },
                 {
                     filename: 'National-Cyber-League-NCL.pptx',
-                    title: 'National Cyber League (NCL)'
+                    title: 'National Cyber League (NCL)',
+                    url: RELEASE_URL + 'National-Cyber-League-NCL.pptx'
                 },
                 {
                     filename: 'Path-to-College-CSCyberSec-Extracurriculars.pptx',
-                    title: 'Path to College: CS/CyberSec Extracurriculars'
+                    title: 'Path to College: CS/CyberSec Extracurriculars',
+                    url: RELEASE_URL + 'Path-to-College-CSCyberSec-Extracurriculars.pptx'
                 },
                 {
                     filename: 'The-Power-of-OSINT.pptx',
-                    title: 'The Power of OSINT'
+                    title: 'The Power of OSINT',
+                    url: RELEASE_URL + 'The-Power-of-OSINT.pptx'
                 },
                 {
                     filename: 'The-Silk-Road-Birth-of-a-Dark-Web-Empire.pptx',
-                    title: 'The Silk Road: Birth of a Dark Web Empire'
+                    title: 'The Silk Road: Birth of a Dark Web Empire',
+                    url: RELEASE_URL + 'The-Silk-Road-Birth-of-a-Dark-Web-Empire.pptx'
                 },
                 {
                     filename: 'Theyre-Watching-How-Apple-and-Social-Media-Track-You.pptx',
-                    title: "They're Watching: How Apple and Social Media Track You"
+                    title: "They're Watching: How Apple and Social Media Track You",
+                    url: RELEASE_URL + 'Theyre-Watching-How-Apple-and-Social-Media-Track-You.pptx'
                 },
                 {
                     filename: 'Web-Exploitation-Concepts-and-Techniques.pptx',
@@ -240,7 +254,8 @@
             const filename = presentation.filename;
             const title = presentation.title || filename.replace('.pptx', '');
             const date = presentation.date ? new Date(presentation.date).toLocaleDateString() : '';
-            
+            const downloadUrl = presentation.url || `presentations/${filename}`;
+
             return `
                 <div class="col-lg-4 col-md-6">
                     <div class="card h-100">
@@ -251,7 +266,7 @@
                             <h5 class="card-title text-center">${title}</h5>
                             ${date ? `<p class="text-muted text-center small">${date}</p>` : ''}
                             <div class="mt-auto text-center">
-                                <a href="presentations/${filename}" download class="btn btn-primary w-100">
+                                <a href="${downloadUrl}" download class="btn btn-primary w-100">
                                     <i class="fas fa-download me-2"></i>Download
                                 </a>
                             </div>
