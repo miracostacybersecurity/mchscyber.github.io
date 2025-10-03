@@ -164,14 +164,21 @@
     
     <!-- Gallery loader script -->
     <script>
-        // List of images to display in the gallery
-        // Add IMG* files and other photos here
+        // ============================================================
+        // GALLERY CONFIGURATION
+        // ============================================================
+        // To add images to the gallery:
+        // 1. Upload your images (IMG_*.jpg, IMG_*.png, etc.) to the assets/ folder
+        // 2. Add them to the galleryImages array below
+        // 3. Each image needs: src (path to image) and caption (description)
+        // ============================================================
+        
         const galleryImages = [
             { src: 'assets/2023.png', caption: 'Club Photo 2023' }
-            // When IMG* files are added to assets/, add them here like:
+            // Add your IMG* files here:
             // { src: 'assets/IMG_001.jpg', caption: 'Club Activity 2024' },
             // { src: 'assets/IMG_002.jpg', caption: 'Competition Day' },
-            // etc.
+            // { src: 'assets/IMG_003.png', caption: 'Workshop Session' }
         ];
         
         function initializeGallery() {

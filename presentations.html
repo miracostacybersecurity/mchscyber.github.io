@@ -119,21 +119,33 @@
     
     <!-- Presentations loader script -->
     <script>
+        // ============================================================
+        // PRESENTATIONS CONFIGURATION
+        // ============================================================
+        // To add presentations:
+        // 1. Upload your .pptx files to the presentations/ folder
+        // 2. Add them to the presentations array below
+        // 3. Each presentation needs: filename, title, and optionally date
+        // ============================================================
+        
         // Function to load and display presentations
         async function loadPresentations() {
             const presentationsList = document.getElementById('presentationsList');
             const emptyState = document.getElementById('emptyState');
             
-            // List of presentation files (this would be dynamically generated in a real setup)
-            // For now, we'll check if there are any .pptx files in the presentations folder
+            // Add your presentations here
             const presentations = [];
             
-            // You can manually add presentations here or fetch them from a JSON file
-            // Example format:
+            // Example format - uncomment and modify when you add presentations:
             // presentations.push({
-            //     filename: 'example.pptx',
+            //     filename: 'Introduction_to_Cybersecurity.pptx',
             //     title: 'Introduction to Cybersecurity',
             //     date: '2024-01-15'
+            // });
+            // presentations.push({
+            //     filename: 'CTF_Workshop.pptx',
+            //     title: 'CTF Workshop',
+            //     date: '2024-02-20'
             // });
             
             if (presentations.length === 0) {
