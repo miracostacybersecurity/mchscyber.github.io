@@ -24,6 +24,12 @@ body {
     color: var(--accent-blue) !important;
 }
 
+.navbar-brand img {
+    height: 30px;
+    width: auto;
+    margin-right: 8px;
+}
+
 .navbar-nav .nav-link {
     color: var(--text-light) !important;
     font-weight: 500;
@@ -511,6 +517,21 @@ body {
     padding: 1.5rem 0;
 }
 
+.presentation-icon i {
+    color: var(--accent-blue);
+}
+
+/* Empty state styles */
+#emptyState i {
+    color: var(--accent-blue);
+    opacity: 0.3;
+}
+
+#emptyState h4,
+#emptyState p {
+    color: var(--text-light);
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .hero-title {
@@ -560,7 +581,7 @@ body {
 #slideshowContainer {
     position: relative;
     width: 100%;
-    padding-bottom: 75%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio for widescreen presentations */
     background-color: #f0f0f0;
 }
 
